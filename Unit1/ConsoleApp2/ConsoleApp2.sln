@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.34607.79
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp2", "ConsoleApp2.csproj", "{D0B6C7D9-F4A4-4640-9D0F-9E5B8B84D9F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp3", "..\ConsoleApp3\ConsoleApp3.csproj", "{2382252A-D4A9-4C4E-B61B-EC8C6593FEB6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demo", "Demo", "{49DC1D58-8093-4D3B-94F6-02500B6698F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Starwars.Core.Entities", "..\Starwars.Core.Entities\Starwars.Core.Entities.csproj", "{06F756C8-E711-4F9C-9B34-151F4A6B4BAF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D0B6C7D9-F4A4-4640-9D0F-9E5B8B84D9F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0B6C7D9-F4A4-4640-9D0F-9E5B8B84D9F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0B6C7D9-F4A4-4640-9D0F-9E5B8B84D9F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0B6C7D9-F4A4-4640-9D0F-9E5B8B84D9F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2382252A-D4A9-4C4E-B61B-EC8C6593FEB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2382252A-D4A9-4C4E-B61B-EC8C6593FEB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2382252A-D4A9-4C4E-B61B-EC8C6593FEB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2382252A-D4A9-4C4E-B61B-EC8C6593FEB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06F756C8-E711-4F9C-9B34-151F4A6B4BAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06F756C8-E711-4F9C-9B34-151F4A6B4BAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06F756C8-E711-4F9C-9B34-151F4A6B4BAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06F756C8-E711-4F9C-9B34-151F4A6B4BAF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D0B6C7D9-F4A4-4640-9D0F-9E5B8B84D9F3} = {49DC1D58-8093-4D3B-94F6-02500B6698F5}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {367F1147-5E7E-4234-9BE8-BAB972011BB9}
+	EndGlobalSection
+EndGlobal
