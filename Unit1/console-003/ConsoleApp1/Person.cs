@@ -46,6 +46,30 @@ namespace ConsoleApp1
         }
 
 
+        public bool NameEndsWithDoubleZero
+        {
+			get {
+				return VerifyNameEndsWithDoubleZero();
+            }
+        }
 
+
+        private bool VerifyNameEndsWithDoubleZero()
+        {
+			if (string.IsNullOrEmpty(Name))
+            {
+				return false;
+            }
+
+			if (Name.Length == 1)
+			{
+				return false;
+			}
+
+			var lastValue = Name.Substring(Name.Length - 2);
+			//Name.EndsWith()
+
+            return lastValue == "00";
+        }
     }
 }
