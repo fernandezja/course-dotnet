@@ -26,6 +26,19 @@ namespace Classroom.Core.Entities
             return $"{base.ToDo()} in Student";
         }
 
+        public string Study() {
+            return "ok";
+        }
+
+        public string Study(string demo)
+        {
+            return $"ok {demo}";
+        }
+
+        public string Study(bool demo)
+        {
+            return $"ok {demo}";
+        }
 
     }
 }

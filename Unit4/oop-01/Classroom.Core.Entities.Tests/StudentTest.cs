@@ -1,3 +1,5 @@
+using Classroom.Core.Entities.Interfaces;
+
 namespace Classroom.Core.Entities.Tests
 {
     public class StudentTest
@@ -61,5 +63,54 @@ namespace Classroom.Core.Entities.Tests
             Assert.Equal(ageExpected, p.Age);
         }
 
+
+        [Fact]
+        public void demo_toString()
+        {
+            var s1 = new Student();
+            s1.FirstName = "Student 1";
+            s1.LastName = "LastName 1";
+
+
+            Assert.Equal("Student 1 LastName 1", s1.ToString());
+
+        }
+
+        [Fact]
+        public void demo_toString2()
+        {
+            var s1 = new Student();
+            s1.FirstName = "Student 1";
+            s1.LastName = "LastName 1";
+
+
+            Assert.Equal("Student 1 LastName 1", s1.ToString());
+
+        }
+
+
+        [Fact]
+        public void demo_unboxing()
+        {
+            var s1 = new Student();
+            s1.FirstName = "Student 1";
+            s1.LastName = "LastName 1";
+
+
+            Assert.Equal("Student 1 LastName 1", s1.ToString());
+
+            //s1.Study()
+
+            Person p1 = s1;
+            IPerson p2 = s1;
+            IWithLastName p3 = s1;
+
+            //p1.Study();
+            //p3.LastName
+
+            var p4 = (IWithLastName)s1;
+            var p5 = s1 as IWithLastName;
+
+        }
     }
 }

@@ -9,7 +9,7 @@ namespace Classroom.Core.Entities
     public abstract class PersonBase
     {
 
-        internal virtual int AgeCalc(DateOnly birthdate)
+        public virtual int AgeCalc(DateOnly birthdate)
         {
             var today = DateOnly.FromDateTime(DateTime.Today);
             var age = today.Year - birthdate.Year;
