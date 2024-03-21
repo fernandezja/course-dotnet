@@ -4,8 +4,9 @@ using Classroom.Core.Entities.Interfaces;
 
 namespace Classroom.Core.Entities
 {
-    public abstract class Person : IWithLastName,
-                          IWithFirstNameAndLastName, IPerson
+    public abstract class Person : PersonBase,
+                                   IWithLastName,
+                                   IWithFirstNameAndLastName, IPerson
     {
         public string DemoPublic;
         private string DemoPrivate;
@@ -25,18 +26,10 @@ namespace Classroom.Core.Entities
         {
             get
             {
-                return AgeCalc();
+                return AgeCalc(Birthdate);
             }
         }
 
-
-        private int AgeCalc()
-        {
-            var today = DateOnly.FromDateTime(DateTime.Today);
-            var age = today.Year - Birthdate.Year;
-            if (Birthdate > today.AddYears(-age)) age--;
-            return age;
-        }
 
         public Person()
         {
