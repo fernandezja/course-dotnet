@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.34707.107
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Starwars.App.Entities", "Starwars.App.Entities\Starwars.App.Entities.csproj", "{FEEBFD9E-0FCF-450E-94F6-E584A2F8C29C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Starwars.App.Entities.Tests", "Starwars.App.Entities.Tests\Starwars.App.Entities.Tests.csproj", "{37DE5063-A0CA-4943-BE63-203F1B6FBF6F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FEEBFD9E-0FCF-450E-94F6-E584A2F8C29C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEEBFD9E-0FCF-450E-94F6-E584A2F8C29C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEEBFD9E-0FCF-450E-94F6-E584A2F8C29C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEEBFD9E-0FCF-450E-94F6-E584A2F8C29C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37DE5063-A0CA-4943-BE63-203F1B6FBF6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37DE5063-A0CA-4943-BE63-203F1B6FBF6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37DE5063-A0CA-4943-BE63-203F1B6FBF6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37DE5063-A0CA-4943-BE63-203F1B6FBF6F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DB9074E7-4AFC-4ADC-B8C8-2D6528F8BDC4}
+	EndGlobalSection
+EndGlobal
