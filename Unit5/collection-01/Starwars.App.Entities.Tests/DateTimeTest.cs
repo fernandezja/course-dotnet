@@ -5,10 +5,19 @@ namespace Starwars.App.Entities.Tests
     public class DateTimeTest
     {
         [Fact]
+        public void demo()
+        {
+            var now = DateTime.Now;
+            
+            Assert.NotNull(now);
+        }
+
+        [Fact]
         public void initial_datetime()
         {
             var d1 = new DateTime();
 
+            
             Assert.Equal(1, d1.Year);
             Assert.Equal(1, d1.Month);
             Assert.Equal(1, d1.Day);
@@ -16,13 +25,17 @@ namespace Starwars.App.Entities.Tests
         }
 
 
+
+
+
         [Fact]
-        public void datetime_subtract()
+        public void datetime_subtract_result_timeSpan()
         {
             var d1 = new DateTime(2024, 3, 22, 18, 0, 0);
             var d2 = new DateTime(2024, 3, 22, 18, 28, 0);
 
-            var result = d2.Subtract(d1);
+            TimeSpan result = d2.Subtract(d1);
+
             Assert.Equal(28, result.TotalMinutes);
             Assert.Equal(1680, result.TotalSeconds);
             Assert.Equal(1680000, result.TotalMilliseconds);
@@ -36,10 +49,12 @@ namespace Starwars.App.Entities.Tests
             var d2 = d1.AddMinutes(28);
 
             var result = d2.Subtract(d1);
+
             Assert.Equal(28, result.TotalMinutes);
             Assert.Equal(1680, result.TotalSeconds);
             Assert.Equal(1680000, result.TotalMilliseconds);
         }
+
 
         [Fact]
         public void datetime_toString()
@@ -77,16 +92,16 @@ namespace Starwars.App.Entities.Tests
         public void datetime_toString_utc()
         {
             var d1 = new DateTime(2024, 3, 22, 18, 28, 0);
-            ;
+            
             Assert.Equal(21, d1.ToUniversalTime().Hour);
             Assert.Equal(28, d1.ToUniversalTime().Minute);
         }
 
+
         [Fact]
         public void datetime_parse()
         {
-
-            var dateString1 = "22/03/2024 18:28";           
+            var dateString1 = "22/03/2024 18:28";                   
             var esArCulture = new CultureInfo("es-ar");
             var d1 = DateTime.Parse(dateString1, esArCulture);
 
@@ -97,15 +112,18 @@ namespace Starwars.App.Entities.Tests
             Assert.Equal(28, d1.Minute);
 
 
+            var dateString2 = "2024-03-22T18:28"; 
 
-            var dateString2 = "2024-03-22T18:28:00"; 
-            var d2 = DateTime.Parse(dateString2, CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None);
+            var d2 = DateTime.Parse(dateString2, 
+                                    CultureInfo.InvariantCulture, 
+                                    System.Globalization.DateTimeStyles.None);
 
             Assert.Equal(2024, d2.Year);
             Assert.Equal(3, d2.Month);
             Assert.Equal(22, d2.Day);
             Assert.Equal(18, d2.Hour);
             Assert.Equal(28, d2.Minute);
+
         }
     
     }
