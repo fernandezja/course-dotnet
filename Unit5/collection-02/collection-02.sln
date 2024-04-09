@@ -7,6 +7,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Starwars.Core.Entities", "S
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Starwars.Core.Entities.Tests", "Starwars.Core.Entities.Tests\Starwars.Core.Entities.Tests.csproj", "{962FEE1C-F718-4FBF-9A78-00FB1D77A17F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{89FF809C-DD63-408E-8BFD-8BB1BE6784BE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{76B31B86-05E6-4ADB-943B-A8CFB5B43D6C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,6 +28,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9488B2F5-5DC5-4D5C-9805-81C3D06A679B} = {89FF809C-DD63-408E-8BFD-8BB1BE6784BE}
+		{962FEE1C-F718-4FBF-9A78-00FB1D77A17F} = {76B31B86-05E6-4ADB-943B-A8CFB5B43D6C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AEFA5549-C057-4D65-B41F-420BB13A6375}
