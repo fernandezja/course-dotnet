@@ -1,51 +1,48 @@
+using System.Collections;
 using System.Drawing;
 using System.Globalization;
 
 namespace Starwars.App.Entities.Tests
 {
-    public class CollectionsTest
+    public class CollectionTest
     {
+
         [Fact]
-        public void cast_test()
+        public void demo1()
+        {
+            string[] autos = new string[4];
+            autos[0] = "Volvo";
+            autos[1] = "BMW";
+
+        }
+
+        [Fact]
+        public void demo()
         {
             var jedi1 = new Jedi()
             {
                 Name = "Yoda"
             };
 
-            var d1 = DateTime.Now;
+            Array array0; //Array abstract
 
-            //jedi1 = (Jedi)d1;
-            //jedi1 = d1 as Jedi;
+            var array1 = new ArrayList(5);
+            //var array2 = new Jedi[5];
 
+            array1.Add(jedi1);
+            array1.Add(new DateTime(2024, 3, 26, 17, 35, 0));
+            array1.Add(".NET");
 
-            var obj1 = (object)jedi1;
-            var obj2 = (object)d1;
+            var demo1 = array1[1];
+            var demo2 = array1[2];
+            
 
-            //jedi1 = (Jedi)obj2;
-
-        }
-
-
-        [Fact]
-        public void list_generic_add()
-        {
-            var jedi1 = new Jedi()
-            {
-                Name = "Yoda"
-            };
-
-            var jedis = new System.Collections.Generic.List<Jedi>();
-
-            jedis.Add(jedi1);
-
-            Assert.True(jedis.Contains(jedi1));
-            Assert.Equal(1, jedis.Count);
+            Assert.Equal("26/3/2024 17:35:00", demo1.ToString());
+            Assert.Equal(".NET", demo2.ToString());
 
         }
 
-
-
+        
 
     }
 }
