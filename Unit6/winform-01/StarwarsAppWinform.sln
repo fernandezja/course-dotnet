@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.34707.107
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Starwars.Core.Entities", "Starwars.Core.Entities\Starwars.Core.Entities.csproj", "{D5D549DB-31E6-42D7-A8DA-8BE65EC03891}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Starwars.App", "..\Starwars.App\Starwars.App.csproj", "{D3A45B34-7AFD-41E3-8651-9BA077937AA9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Starwars.Core.Business", "Starwars.Core.Business\Starwars.Core.Business.csproj", "{E7DBD7F6-4B13-45FD-8AAC-18444F9B9C19}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D5D549DB-31E6-42D7-A8DA-8BE65EC03891}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5D549DB-31E6-42D7-A8DA-8BE65EC03891}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5D549DB-31E6-42D7-A8DA-8BE65EC03891}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5D549DB-31E6-42D7-A8DA-8BE65EC03891}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3A45B34-7AFD-41E3-8651-9BA077937AA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3A45B34-7AFD-41E3-8651-9BA077937AA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3A45B34-7AFD-41E3-8651-9BA077937AA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3A45B34-7AFD-41E3-8651-9BA077937AA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7DBD7F6-4B13-45FD-8AAC-18444F9B9C19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7DBD7F6-4B13-45FD-8AAC-18444F9B9C19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7DBD7F6-4B13-45FD-8AAC-18444F9B9C19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7DBD7F6-4B13-45FD-8AAC-18444F9B9C19}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3908A0B6-8D3A-4CF7-8FD3-9717F40FB2AE}
+	EndGlobalSection
+EndGlobal
