@@ -65,7 +65,7 @@
                 lblMensajeError.Visible = false;
             }
 
-            GenerarCheckbox(7);
+            GenerarCheckbox(70);
         }
 
         private void GenerarCheckbox(int cantidad)

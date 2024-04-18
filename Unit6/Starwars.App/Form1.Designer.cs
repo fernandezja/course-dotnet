@@ -146,7 +146,6 @@
             Controls.Add(txtAncho);
             Controls.Add(btnAplicar);
             Name = "FormInit";
-            Opacity = 0.5D;
             Text = "Main/Home";
             Load += FormInit_Load;
             ResumeLayout(false);
