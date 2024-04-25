@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             dataGridView2 = new DataGridView();
-            NameColumn = new DataGridViewTextBoxColumn();
             dataGridView1 = new DataGridView();
             label1 = new Label();
             button1 = new Button();
+            NameColumn = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -45,11 +45,6 @@
             dataGridView2.Name = "dataGridView2";
             dataGridView2.Size = new Size(494, 150);
             dataGridView2.TabIndex = 1;
-            // 
-            // NameColumn
-            // 
-            NameColumn.HeaderText = "Name";
-            NameColumn.Name = "NameColumn";
             // 
             // dataGridView1
             // 
@@ -80,6 +75,12 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // NameColumn
+            // 
+            NameColumn.DataPropertyName = "Name";
+            NameColumn.HeaderText = "Name";
+            NameColumn.Name = "NameColumn";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -101,8 +102,8 @@
         #endregion
         private DataGridView dataGridView1;
         private DataGridView dataGridView2;
-        private DataGridViewTextBoxColumn NameColumn;
         private Label label1;
         private Button button1;
+        private DataGridViewTextBoxColumn NameColumn;
     }
 }
