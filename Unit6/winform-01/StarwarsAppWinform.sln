@@ -5,7 +5,7 @@ VisualStudioVersion = 17.10.34707.107
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Starwars.Core.Entities", "Starwars.Core.Entities\Starwars.Core.Entities.csproj", "{D5D549DB-31E6-42D7-A8DA-8BE65EC03891}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Starwars.App", "..\Starwars.App\Starwars.App.csproj", "{D3A45B34-7AFD-41E3-8651-9BA077937AA9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Starwars.App", "Starwars.App\Starwars.App.csproj", "{D3A45B34-7AFD-41E3-8651-9BA077937AA9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Starwars.Core.Business", "Starwars.Core.Business\Starwars.Core.Business.csproj", "{E7DBD7F6-4B13-45FD-8AAC-18444F9B9C19}"
 EndProject

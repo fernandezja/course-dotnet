@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Starwars.Core.Entities\Starwars.Core.Entities.csproj" />
+  </ItemGroup>
+
 </Project>

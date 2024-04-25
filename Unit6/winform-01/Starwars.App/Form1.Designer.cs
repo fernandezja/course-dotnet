@@ -38,6 +38,9 @@
             panel1 = new Panel();
             txtOpacity = new TextBox();
             label3 = new Label();
+            panel2 = new Panel();
+            comboBox2 = new ComboBox();
+            lblJediSeleccionado = new Label();
             SuspendLayout();
             // 
             // btnAplicar
@@ -130,11 +133,39 @@
             label3.TabIndex = 10;
             label3.Text = "Opacity";
             // 
+            // panel2
+            // 
+            panel2.Location = new Point(218, 191);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(200, 253);
+            panel2.TabIndex = 9;
+            // 
+            // comboBox2
+            // 
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Location = new Point(12, 478);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(298, 23);
+            comboBox2.TabIndex = 11;
+            comboBox2.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
+            // 
+            // lblJediSeleccionado
+            // 
+            lblJediSeleccionado.AutoSize = true;
+            lblJediSeleccionado.Location = new Point(12, 504);
+            lblJediSeleccionado.Name = "lblJediSeleccionado";
+            lblJediSeleccionado.Size = new Size(100, 15);
+            lblJediSeleccionado.TabIndex = 12;
+            lblJediSeleccionado.Text = "Jedi Seleccionado";
+            // 
             // FormInit
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(407, 699);
+            ClientSize = new Size(433, 699);
+            Controls.Add(lblJediSeleccionado);
+            Controls.Add(comboBox2);
+            Controls.Add(panel2);
             Controls.Add(label3);
             Controls.Add(txtOpacity);
             Controls.Add(panel1);
@@ -164,5 +195,8 @@
         private Panel panel1;
         private TextBox txtOpacity;
         private Label label3;
+        private Panel panel2;
+        private ComboBox comboBox2;
+        private Label lblJediSeleccionado;
     }
 }
