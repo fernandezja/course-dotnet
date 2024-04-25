@@ -6,9 +6,7 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-
   <ItemGroup>
-    <ProjectReference Include="..\Starwars.Core.Business.Interfaces\Starwars.Core.Business.Interfaces.csproj" />
     <ProjectReference Include="..\Starwars.Core.Entities\Starwars.Core.Entities.csproj" />
   </ItemGroup>
 

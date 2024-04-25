@@ -3,7 +3,7 @@ using Starwars.Core.Entities;
 
 namespace Starwars.Core.Business
 {
-    public class JedisBusiness: IJedisBusiness
+    public class JedisNewOrderBusiness: IJedisBusiness
     {
         public List<Jedi> GetAll() {
 
@@ -12,7 +12,7 @@ namespace Starwars.Core.Business
             for (int i = 1; i <= 100; i++)
             {
                 jedis.Add(new Jedi() { 
-                    Name = $"Jedi {i.ToString()}"
+                    Name = $"Jedi {i.ToString()} (super power)"
                 });
             }
 

@@ -28,12 +28,81 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            dataGridView2 = new DataGridView();
+            NameColumn = new DataGridViewTextBoxColumn();
+            dataGridView1 = new DataGridView();
+            label1 = new Label();
+            button1 = new Button();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            SuspendLayout();
+            // 
+            // dataGridView2
+            // 
+            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { NameColumn });
+            dataGridView2.Location = new Point(22, 223);
+            dataGridView2.Name = "dataGridView2";
+            dataGridView2.Size = new Size(494, 150);
+            dataGridView2.TabIndex = 1;
+            // 
+            // NameColumn
+            // 
+            NameColumn.HeaderText = "Name";
+            NameColumn.Name = "NameColumn";
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(22, 39);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.Size = new Size(494, 150);
+            dataGridView1.TabIndex = 0;
+            dataGridView1.SelectionChanged += dataGridView1_SelectionChanged;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(567, 39);
+            label1.Name = "label1";
+            label1.Size = new Size(38, 15);
+            label1.TabIndex = 2;
+            label1.Text = "label1";
+            // 
+            // button1
+            // 
+            button1.Location = new Point(568, 81);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 3;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(button1);
+            Controls.Add(label1);
+            Controls.Add(dataGridView2);
+            Controls.Add(dataGridView1);
+            Name = "Form1";
+            Text = "Form1";
+            Load += Form1_Load;
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+        private DataGridView dataGridView1;
+        private DataGridView dataGridView2;
+        private DataGridViewTextBoxColumn NameColumn;
+        private Label label1;
+        private Button button1;
     }
 }
