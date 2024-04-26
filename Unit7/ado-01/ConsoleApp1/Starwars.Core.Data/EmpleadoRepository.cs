@@ -36,6 +36,7 @@ namespace Starwars.Core.Data
                     //empleado.Id = (int)reader[0];
                     empleado.Id = reader.GetInt32(0);
                     empleado.NombreCompleto = reader.GetString(1);
+                    empleado.DNI = reader.GetString(2);
 
                     empleados.Add(empleado);
                 }
