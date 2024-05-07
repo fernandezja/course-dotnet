@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Starwars.Core.Data\Starwars.Core.Data.csproj" />
+    <ProjectReference Include="..\Starwars.Core.Entities\Starwars.Core.Entities.csproj" />
+  </ItemGroup>
+
+</Project>
