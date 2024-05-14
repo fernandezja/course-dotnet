@@ -29,5 +29,21 @@ namespace Starwars.Core.Business
         {
             return _jediRepository2.GetAll();
         }
+
+        public GenericResult DeleteAsync(int jediId)
+        {
+            return _jediRepository2.DeleteAsync(jediId);
+        }
+
+        public Jedi GetAsync(int jediId)
+        {
+            return _jediRepository2.GetAsync(jediId);
+        }
+
+        public GenericResult UpdateAsync(Jedi jedi)
+        {
+            return _jediRepository2.UpdateAsync(jedi);
+        }
+
     }
 }
