@@ -7,6 +7,9 @@ namespace WebApplication1.Controllers
     {
         public IActionResult Index()
         {
+            //Business
+            //lista
+
             return View();
         }
 
