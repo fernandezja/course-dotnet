@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace Starwars.Core.Entities
 {
@@ -11,7 +12,7 @@ namespace Starwars.Core.Entities
         [Column("FirstName")]
         public string Name { get; set; }
 
-
+        [JsonIgnore]
         public string Email { get; set; }
 
 
