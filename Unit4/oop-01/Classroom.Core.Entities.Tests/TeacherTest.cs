@@ -9,6 +9,7 @@ namespace Classroom.Core.Entities.Tests
             t1.FirstName = "Teacher1";
             t1.LastName = "Teacher1";
 
+
             Assert.Equal("Teacher1", t1.FirstName);
             Assert.Equal("Teacher1", t1.LastName);
             

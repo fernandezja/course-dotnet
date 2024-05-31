@@ -1,6 +1,7 @@
 ﻿using Classroom.Core.Entities.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,9 +29,17 @@ namespace Classroom.Core.Entities.Tests
 
             //s1.Study()
 
+            s1.Study();
+
             Person p1 = s1;
+            ((Student)p1).Study();
+
+            //var t2 = ((Teacher)p1);
+
+
             IPerson p2 = s1;
             IWithLastName p3 = s1;
+          
 
             Assert.Equal("Student 1", p2.FirstName);
             //p1.Study();

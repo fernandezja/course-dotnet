@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace Classroom.Core.Entities
 {
-    public class Teacher: Person
+    public class Organization: IWithLastName
     {
-      
-
-	}
+        public string LastName { get; set; }
+    }
 }

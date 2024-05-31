@@ -45,13 +45,13 @@ namespace Classroom.Core.Entities.Tests
 
             Assert.Equal("FirstName Test", p.FirstName);
             Assert.Equal(string.Empty, p.LastName);
-            Assert.Equal(24, p.Age);
+            Assert.Equal(22, p.Age);
         }
 
 
         [Theory]
-        [InlineData(2000, 1, 1, 24)]
-        [InlineData(2003, 1, 1, 21)]
+        [InlineData(2000, 1, 1, 22)]
+        [InlineData(2003, 1, 1, 19)]
         public void Should_be_create_a_student_set_Birthdate_return_Age_multiple(
                         int year, int month, int day, int ageExpected)
         {

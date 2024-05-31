@@ -6,7 +6,8 @@ namespace Classroom.Core.Entities
 {
     public abstract class Person : PersonBase,
                                    IWithLastName,
-                                   IWithFirstNameAndLastName, IPerson
+                                   IWithFirstNameAndLastName, 
+                                   IPerson
     {
         public string DemoPublic;
         private string DemoPrivate;
@@ -19,7 +20,7 @@ namespace Classroom.Core.Entities
             set { _firstName = value; }
         }
 
-        public string LastName { get; set; }
+        public string LastName { get;  set; }
         public DateOnly Birthdate { get; set; }
 
         public string FullName
@@ -32,8 +33,8 @@ namespace Classroom.Core.Entities
         public int Age
         {
             get
-            {
-                return base.AgeCalc(Birthdate);
+            { 
+                return this.AgeCalc(Birthdate);
             }
         }
 

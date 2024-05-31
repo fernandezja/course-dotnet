@@ -43,8 +43,16 @@ app.UseRouting();
 
 app.UseAuthorization();
 
+
+
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+
+//app.Run(async context => {
+//    await context.Response.WriteAsync("Pagina no encontrada");
+//});
+
 
 app.Run();

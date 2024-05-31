@@ -13,8 +13,7 @@ namespace Classroom.Core.Entities.Tests
             t1.FirstName = "Teacher1";
             t1.LastName = "LastName1";
 
-            c1.Teacher = t1;
- 
+            c1.Teacher = t1; 
 
             Assert.Equal("Course .NET", c1.Title);
             Assert.Equal("Teacher1", c1.Teacher.FirstName);
@@ -31,7 +30,10 @@ namespace Classroom.Core.Entities.Tests
             t1.FirstName = "Teacher1";
             t1.LastName = "LastName1";
 
-            var c1 = new Course("Course .NET", t1);
+            //var c1 = new Course("Course .NET", t1);
+            
+            var c1 = new Course(teacher: t1,
+                                title: "Course .NET");
 
 
             Assert.Equal("Course .NET", c1.Title);
