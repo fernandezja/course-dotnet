@@ -7,6 +7,28 @@ namespace Starwars.App.Entities.Tests
     {
         private const string COURSE_NET = "Course .NET";
 
+
+
+
+
+        [Fact]
+        public void String_Concat()
+        {
+            const string NET = ".NET";
+
+            //var demo = ".NET";
+            var demo = new System.Text.StringBuilder();
+
+            for (int i = 0; i < 1000; i++)
+            {
+                //demo = demo + ".NET";
+                demo.Append(i.ToString());
+                demo.Append(NET);
+            }
+
+            Assert.NotEmpty(demo.ToString());
+        }
+
         [Fact]
         public void test1()
         {
@@ -21,7 +43,6 @@ namespace Starwars.App.Entities.Tests
 
             Assert.Equal('C', COURSE_NET[0]);
             Assert.Equal('.', COURSE_NET[7]);
-
         }
 
 
