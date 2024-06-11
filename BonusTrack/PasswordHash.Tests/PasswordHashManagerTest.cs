@@ -16,13 +16,13 @@ namespace PasswordHash.Tests
 
 
         [Fact]
-        public void HashPassword_Test()
+        public void HashPassword1_Test()
         {
             var saltHex = "B9++mcceb8aoJSyCavMGVw==";
             var salt = Convert.FromBase64String(saltHex);
 
 
-            var hash = PasswordHashManager.HashPassword("Demo123456", salt);
+            var hash = PasswordHashManager.HashPassword1("Demo123456", salt);
 
             var hashHex = Convert.ToBase64String(hash);
 
@@ -31,16 +31,32 @@ namespace PasswordHash.Tests
         }
 
 
+        [Fact]
+        public void HashPassword2_Test()
+        {
+            var saltHex = "B9++mcceb8aoJSyCavMGVw==";
+            var salt = Convert.FromBase64String(saltHex);
+
+
+            var hash = PasswordHashManager.HashPassword2("Demo123456", salt);
+
+            var hashHex = Convert.ToBase64String(hash);
+
+            Assert.NotNull(hashHex);
+            Assert.Equal("PAGkeqFk/pPeqh/iBjDwzONJIN6zXR1U/gXHjSzyt6k=", hashHex);
+        }
+
+
 
 
         [Theory]
         [InlineData("B9++mcceb8aoJSyCavMGVw==", "B9++mcceb8aoJSyCavMGVzwBpHqhZP6T3qof4gYw8MzjSSDes10dVP4Fx40s8rep")]
         [InlineData("k/xIkUIpPvJWfRakYWEwFA==", "k/xIkUIpPvJWfRakYWEwFE9YIUATsllPjd68l7fpeFy3GTB+SML9lhauEG4kdXRi")]
-        public void HashPassword_Multiple_Test(string saltHex, string hashHexExpected)
+        public void HashPassword1_Multiple_Test(string saltHex, string hashHexExpected)
         {
             var salt = Convert.FromBase64String(saltHex);
 
-            var hashHex = PasswordHashManager.HashPassword("Demo123456", salt);
+            var hashHex = PasswordHashManager.HashPassword1("Demo123456", salt);
 
             Assert.NotNull(hashHex);
             //Assert.Equal(hashHexExpected, hashHex);
@@ -57,7 +73,7 @@ namespace PasswordHash.Tests
             var hashHexFromDb = hashHexExpected;
 
 
-            var hashHexToVerify = PasswordHashManager.HashPasswordHex(password, saltFromDb);
+            var hashHexToVerify = PasswordHashManager.HashPassword1Hex(password, saltFromDb);
 
             var isValid = (hashHexFromDb == hashHexToVerify);
 
