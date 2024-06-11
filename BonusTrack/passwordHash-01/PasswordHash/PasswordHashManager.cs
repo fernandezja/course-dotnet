@@ -5,7 +5,7 @@ namespace PasswordHash
 {
     public static class PasswordHashManager
     {
-        public static string HashPassword(string password, byte[] salt)
+        public static byte[] HashPassword(string password, byte[] salt)
         {
           
                 byte[] passwordBytes = Encoding.UTF8.GetBytes(password);
@@ -23,8 +23,14 @@ namespace PasswordHash
                 Buffer.BlockCopy(salt, 0, hashedPasswordWithSalt, 0, salt.Length);
                 Buffer.BlockCopy(hashedBytes, 0, hashedPasswordWithSalt, salt.Length, hashedBytes.Length);
 
-                return Convert.ToBase64String(hashedPasswordWithSalt);
+                return hashedPasswordWithSalt;
            
+        }
+
+        public static string HashPasswordHex(string password, byte[] salt)
+        {
+            return Convert.ToBase64String(HashPassword(password, salt));
+
         }
 
         public static byte[] GenerateSalt()
