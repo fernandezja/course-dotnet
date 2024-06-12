@@ -1,4 +1,6 @@
-﻿using Starwars.Core.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using Starwars.Core.Entities;
+using Starwars.Core.Entities.Filters;
 
 namespace Starwars.Core.DataEF
 {
@@ -24,6 +26,27 @@ namespace Starwars.Core.DataEF
             return result;
 
         }
+
+        public async Task<JediResult> SearchAsync(JediFilter filter)
+        {
+
+            var result = new JediResult();
+
+            using (var db = new StarwarsContext())
+            {
+                var skip = (filter.PageIndex - 1) * filter.PageSize;
+
+                result.Items = await db.Jedis
+                                    .Skip(skip)
+                                    .Take(filter.PageSize)
+                                    .ToListAsync();
+                }
+
+            return result;
+
+        }
+
+
 
 
         public GenericResult DeleteAsync(int jediId)

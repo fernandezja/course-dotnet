@@ -1,6 +1,7 @@
 ﻿
 using Starwars.Core.Data;
 using Starwars.Core.Entities;
+using Starwars.Core.Entities.Filters;
 
 namespace Starwars.Core.Business
 {
@@ -28,6 +29,17 @@ namespace Starwars.Core.Business
         public JediResult GetAllv2()
         {
             return _jediRepository2.GetAll();
+        }
+
+
+        public JediResult Search(JediFilter filter)
+        {
+            return _jediRepository2.SearchAsync(filter).GetAwaiter().GetResult();
+        }
+
+        public async Task<JediResult> SearchAsync(JediFilter filter)
+        {
+            return await _jediRepository2.SearchAsync(filter);
         }
 
         public GenericResult DeleteAsync(int jediId)
