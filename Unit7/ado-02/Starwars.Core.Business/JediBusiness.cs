@@ -18,7 +18,7 @@ namespace Starwars.Core.Business
 
         public JediResult GetAll()
         {
-            return GetAllv2();
+            return GetAllv1();
         }
 
         public JediResult GetAllv1()

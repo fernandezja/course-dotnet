@@ -11,7 +11,8 @@ namespace Starwars.Core.Data
 
         private readonly string CONNECTIONSTRING = "Persist Security Info=True;Initial Catalog=StarwarsBorrar2;Data Source=.; Application Name=DemoApp; Integrated Security=True;MultipleActiveResultSets=True;TrustServerCertificate=True;";
 
-        private readonly string QUERY_DEMO = "SELECT \r\n\tJediId = C.column_id,\r\n\t[Name] = C.[Name]\r\nFROM sys.all_columns C\r\nWHERE \r\n\tC.name LIKE 'star%'";
+        //private readonly string QUERY_DEMO = "SELECT \r\n\tJediId = C.column_id,\r\n\t[Name] = C.[Name]\r\nFROM sys.all_columns C\r\nWHERE \r\n\tC.name LIKE 'star%'";
+        private readonly string QUERY_SELECT = "SELECT JediId,FirstName,LastName,Email FROM dbo.Jedi";
 
         public JediRepository()
         {
@@ -24,7 +25,7 @@ namespace Starwars.Core.Data
             result.Items = new List<Jedi>();
 
             //Obtener datos desde la DB
-
+            //var conn2 = new SqlConnection(CONNECTIONSTRING)
 
             //var sqlConnectionStringBuilder = new SqlConnectionStringBuilder();
             //sqlConnectionStringBuilder.DataSource = "StarwarBorrar2"
@@ -32,13 +33,14 @@ namespace Starwars.Core.Data
 
             var cmd = new SqlCommand();
             cmd.CommandType = System.Data.CommandType.Text;
-            cmd.CommandText = QUERY_DEMO;
+            cmd.CommandText = QUERY_SELECT;
+
 
             //Parametros..
-
+            //cmd.Parameters
 
             //PASO 1: Conexion
-
+            
             try
             {
 
@@ -55,12 +57,12 @@ namespace Starwars.Core.Data
                     {
                         //var jediId = (int)reader.GetValue(0);
                         var jediId = reader.GetInt32(0);
-                        var name = reader.GetString(1);
+                        var firstName = reader.GetString(1);
 
                         result.Items.Add(new Jedi
                         {
                             JediId = jediId,
-                            Name = name
+                            Name = firstName
                         });
                     }
                     //conn.Close(); using llama al dispose
