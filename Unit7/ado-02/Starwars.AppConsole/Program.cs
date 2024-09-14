@@ -4,21 +4,31 @@ using Starwars.Core.Entities;
 using Microsoft.Extensions.Configuration;
 using Serilog;
 
-Console.WriteLine("Hello, World!");
-
-/*
 var logger = new LoggerConfiguration()
     .WriteTo.Console()
     .CreateLogger();
 
 
-
 var builder = new ConfigurationBuilder()
-                            .SetBasePath(Directory.GetCurrentDirectory())
-                            .AddJsonFile("appSettings.json", optional: false);
-                        
+                  .SetBasePath(Directory.GetCurrentDirectory())
+                  .AddJsonFile("appSettings.json", optional: false);
 
 var configuration = builder.Build();
+
+var titleSection = configuration.GetSection("Title");
+
+var title = titleSection.Value;
+
+Console.WriteLine($"Hello, {title}!");
+
+logger.Information("Demo Log 1");
+logger.Error("Demo Log 2");
+logger.Warning("Demo Log 3");
+
+/*
+
+
+
 
 var variable1 = configuration["variable1"];
 

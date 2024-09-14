@@ -11,29 +11,60 @@ namespace Starwars.Core.DataEF
 {
     public class EmpleadoRepository
     {
-        private readonly StarwarsDBContext _dbContext;
+        //private readonly StarwarsDBContext _dbContext;
 
-        public EmpleadoRepository(StarwarsDBContext dbContext) {
-            _dbContext = dbContext;
+        public EmpleadoRepository() {
+           // _dbContext = dbContext;
         }
 
         public List<Empleado> ObtenerTodos()
         {
             //var empleados = new List<Empleado>();
 
-            var query = from e in _dbContext.Empleados
-                        select e;
+            using (var dbContext = new StarwarsDBContext())
+            {
+                //var query1 = _dbContext.Empleados.ToList();
 
-            return query.ToList();
+                var query = from e in dbContext.Empleados
+                            select e;
+
+                return query.ToList();
+            }
+
+            
+        }
+
+
+        public List<Empleado> ObtenerTodos(EmpleadoFiltro filtro)
+        {
+
+            using (var dbContext = new StarwarsDBContext())
+            {
+                //var query1 = _dbContext.Empleados.ToList();
+
+                var query = from e in dbContext.Empleados
+                            where e.Nombre.Contains(filtro.TextoABuscar)
+                            select e;
+
+                var skip = (filtro.PageIndex - 1) * filtro.PageSize;
+
+                return query.Skip(skip)
+                            .Take(filtro.PageSize)
+                            .ToList();
+            }
+
+
         }
 
         public bool Guardar(Empleado empleado) {
 
-            _dbContext.Empleados.Add(empleado);
+            var dbContext = new StarwarsDBContext();
+
+            dbContext.Empleados.Add(empleado);
 
             try
             {
-                _dbContext.SaveChanges();
+                dbContext.SaveChanges();
             }
             catch (SqlException ex)
             {
@@ -67,8 +98,9 @@ namespace Starwars.Core.DataEF
 
         public bool Eliminar(Empleado empleado)
         {
-            _dbContext.Empleados.Remove(empleado);
-            _dbContext.SaveChanges();
+            var dbContext = new StarwarsDBContext();
+            dbContext.Empleados.Remove(empleado);
+            dbContext.SaveChanges();
 
             return true;
         }

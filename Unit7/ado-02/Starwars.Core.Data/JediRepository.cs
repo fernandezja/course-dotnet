@@ -9,10 +9,10 @@ namespace Starwars.Core.Data
     public class JediRepository
     {
 
-        private readonly string CONNECTIONSTRING = "Persist Security Info=True;Initial Catalog=StarwarsBorrar2;Data Source=.; Application Name=DemoApp; Integrated Security=True;MultipleActiveResultSets=True;TrustServerCertificate=True;";
+        private readonly string CONNECTIONSTRING = "Persist Security Info=True;Initial Catalog=Starwars;Data Source=.; Application Name=DemoApp; Integrated Security=True;MultipleActiveResultSets=True;TrustServerCertificate=True;";
 
         //private readonly string QUERY_DEMO = "SELECT \r\n\tJediId = C.column_id,\r\n\t[Name] = C.[Name]\r\nFROM sys.all_columns C\r\nWHERE \r\n\tC.name LIKE 'star%'";
-        private readonly string QUERY_SELECT = "SELECT JediId,FirstName,LastName,Email FROM dbo.Jedi";
+        private readonly string QUERY_SELECT = "SELECT JediId,Name,Birthday FROM dbo.Jedi";
 
         public JediRepository()
         {
@@ -57,7 +57,11 @@ namespace Starwars.Core.Data
                     {
                         //var jediId = (int)reader.GetValue(0);
                         var jediId = reader.GetInt32(0);
-                        var firstName = reader.GetString(1);
+
+                        //var firstName = reader.GetString(1);
+                        var firstName = reader.GetString(reader.GetOrdinal("Name"));
+
+                        var birthday = reader.GetDateTime(2);
 
                         result.Items.Add(new Jedi
                         {
@@ -65,6 +69,7 @@ namespace Starwars.Core.Data
                             Name = firstName
                         });
                     }
+
                     //conn.Close(); using llama al dispose
                 }
 
@@ -86,6 +91,11 @@ namespace Starwars.Core.Data
                 result.HasError = true;
                 result.Message = ex.Message;
             }
+            finally
+            {
+                //conn.Close();
+            }
+
 
 
             return result;

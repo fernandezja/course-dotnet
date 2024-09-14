@@ -1,14 +1,15 @@
-﻿using System.Net;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.Net;
 
 namespace Starwars.Core.Entities
 {
-    //[Table("Empleados", Schema = "dbo")]
-
+    [Table("Empleado", Schema = "dbo")]
     public class Empleado
     {
         //[Key]
         public int Id { get; set; }
-        public string NombreCompleto { get; set; }
+        [Column("NombreCompleto")]
+        public string Nombre { get; set; }
         public string DNI { get; set; }
         public int Edad { get; set; }
         public bool Casado { get; set; }
