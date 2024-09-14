@@ -3,6 +3,7 @@
 
 using ConsoleApp1;
 
+
 Console.WriteLine("Hello, World!");
 
 var a = 0;
@@ -20,6 +21,16 @@ try
 
     Console.WriteLine($"Result: {d}");
 }
+//catch (DivideByZeroException ex) when (a == 0)
+//{
+//    //Acciones particulares
+//    Console.WriteLine($"ERROR: {ex.Message}");
+//}
+catch (DivideByZeroException ex)
+{
+    //Acciones particulares
+    Console.WriteLine($"ERROR: {ex.Message}");
+}
 catch (CustomException ex)
 {
     Console.WriteLine($"Custom Error: {ex.Message}");
@@ -28,7 +39,8 @@ catch (Exception ex)
 {
     Console.WriteLine($"ERROR: {ex.Message}");
 }
-finally { 
+finally
+{
     //acciones... 
 }
 
