@@ -10,6 +10,7 @@ namespace ConsoleApp9v3NETFW
     {
         static void Main(string[] args)
         {
+
             Console.WriteLine("Hello World! NET Framework");
         }
     }
