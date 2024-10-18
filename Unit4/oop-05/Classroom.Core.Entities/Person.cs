@@ -1,0 +1,14 @@
+﻿using Classroom.Core.Entities.Interfaces;
+
+namespace Classroom.Core.Entities
+{
+    public abstract class Person: IPerson
+    {
+        public string Name { get; set; }
+        public string LastName { get; set; }
+
+        public DateOnly BirthDate { get; set; }
+
+        public int Age => DateTime.Now.Year - BirthDate.Year;   
+    }
+}
