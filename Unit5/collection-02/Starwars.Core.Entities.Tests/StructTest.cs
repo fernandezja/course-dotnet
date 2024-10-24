@@ -31,7 +31,6 @@ namespace Starwars.Core.Entities.Tests
         [Fact]
         public void demo_struct()
         {
-
             var point1 = new System.Drawing.Point()
             {
                 X = 100,

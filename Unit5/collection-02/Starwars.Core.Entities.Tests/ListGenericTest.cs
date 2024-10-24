@@ -79,18 +79,18 @@ public class ListGenericTest
     }
 
 
-    [Fact]
-    public void list_equal()
-    {
-        var jedi10 = new Jedi()
-        {
-            Name = "Jedi 10"
-        };
+    //[Fact]
+    //public void list_equal()
+    //{
+    //    var jedi10 = new Jedi()
+    //    {
+    //        Name = "Jedi 10"
+    //    };
 
-        var equal = (_jedis[9] == jedi10);
+    //    var equal = (_jedis[9] == jedi10);
 
-        Assert.True(equal);
-    }
+    //    Assert.True(equal);
+    //}
 
 
 

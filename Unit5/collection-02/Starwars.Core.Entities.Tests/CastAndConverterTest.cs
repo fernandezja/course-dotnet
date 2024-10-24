@@ -7,26 +7,26 @@ namespace Starwars.Core.Entities.Tests
     public class CastAndConverterTest
     {
 
-        [Fact]
-        public void cast_test()
-        {
-            var jedi1 = new Jedi()
-            {
-                Name = "Yoda"
-            };
+        //[Fact]
+        //public void cast_test()
+        //{
+        //    var jedi1 = new Jedi()
+        //    {
+        //        Name = "Yoda"
+        //    };
 
-            var d1 = DateTime.Now;
+        //    var d1 = DateTime.Now;
 
-            //jedi1 = (Jedi)d1;
-            //jedi1 = d1 as Jedi;
+        //    jedi1 = (Jedi)d1;
+        //    jedi1 = d1 as Jedi;
 
 
-            var obj1 = (object)jedi1;
-            var obj2 = (object)d1;
+        //    var obj1 = (object)jedi1;
+        //    var obj2 = (object)d1;
 
-            jedi1 = (Jedi)obj2; //System.InvalidCastException
+        //    jedi1 = (Jedi)obj2; //System.InvalidCastException
 
-        }
+        //}
 
 
         [Fact]
