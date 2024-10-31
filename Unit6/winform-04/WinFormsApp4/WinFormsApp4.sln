@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35424.110 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsApp4", "WinFormsApp4.csproj", "{36A1F224-5782-4206-A3EF-D76CA35D12A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Starwars.Core.Negocio", "..\Starwars.Core.Negocio\Starwars.Core.Negocio.csproj", "{773BBBAD-5EAE-412B-808B-491844A52448}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Starwars.Core.Datos", "..\Starwars.Core.Datos\Starwars.Core.Datos.csproj", "{3E9008CF-B834-4DD8-AF08-19AEC0E0F4C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Starwars.Core.Entidades", "..\Starwars.Core.Entidades\Starwars.Core.Entidades.csproj", "{A0145426-D760-4017-AF84-FA89FC1F0E07}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{36A1F224-5782-4206-A3EF-D76CA35D12A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36A1F224-5782-4206-A3EF-D76CA35D12A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36A1F224-5782-4206-A3EF-D76CA35D12A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36A1F224-5782-4206-A3EF-D76CA35D12A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{773BBBAD-5EAE-412B-808B-491844A52448}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{773BBBAD-5EAE-412B-808B-491844A52448}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{773BBBAD-5EAE-412B-808B-491844A52448}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{773BBBAD-5EAE-412B-808B-491844A52448}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E9008CF-B834-4DD8-AF08-19AEC0E0F4C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E9008CF-B834-4DD8-AF08-19AEC0E0F4C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E9008CF-B834-4DD8-AF08-19AEC0E0F4C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E9008CF-B834-4DD8-AF08-19AEC0E0F4C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0145426-D760-4017-AF84-FA89FC1F0E07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0145426-D760-4017-AF84-FA89FC1F0E07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0145426-D760-4017-AF84-FA89FC1F0E07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0145426-D760-4017-AF84-FA89FC1F0E07}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
