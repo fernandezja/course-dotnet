@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Starwars.Core.Config;
 using Starwars.Core.Entities;
 using Starwars.Core.Entities.Filters;
 
@@ -7,9 +8,11 @@ namespace Starwars.Core.DataEF
     public class JediRepository
     {
 
-        public JediRepository()
-        {
+        private readonly IConfig _config;
 
+        public JediRepository(IConfig config)
+        {
+            _config = config;
         }
 
         public JediResult GetAll()
@@ -17,7 +20,7 @@ namespace Starwars.Core.DataEF
 
             var result = new JediResult();
 
-            using (var db = new StarwarsContext())
+            using (var db = new StarwarsContext(_config))
             {
 
                 result.Items = db.Jedis.ToList();
@@ -32,7 +35,7 @@ namespace Starwars.Core.DataEF
 
             var result = new JediResult();
 
-            using (var db = new StarwarsContext())
+            using (var db = new StarwarsContext(_config))
             {
                 var skip = (filter.PageIndex - 1) * filter.PageSize;
 
@@ -53,7 +56,7 @@ namespace Starwars.Core.DataEF
         {
             var result = new GenericResult();
 
-            using (var db = new StarwarsContext())
+            using (var db = new StarwarsContext(_config))
             {
                 var jedi = from j in db.Jedis
                            where j.JediId == jediId
@@ -76,7 +79,7 @@ namespace Starwars.Core.DataEF
         public Jedi GetAsync(int jediId)
         {
 
-            using (var db = new StarwarsContext())
+            using (var db = new StarwarsContext(_config))
             {
                 var jedi = from j in db.Jedis
                            where j.JediId == jediId
@@ -91,7 +94,7 @@ namespace Starwars.Core.DataEF
         public GenericResult UpdateAsync(Jedi jedi)
         {
 
-            using (var db = new StarwarsContext())
+            using (var db = new StarwarsContext(_config))
             {
                 db.Attach(jedi);
 

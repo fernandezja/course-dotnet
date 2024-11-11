@@ -3,6 +3,8 @@ using Starwars.Core.Business;
 using Starwars.Core.Entities;
 using Microsoft.Extensions.Configuration;
 using Serilog;
+using Microsoft.Extensions.DependencyInjection;
+using Starwars.Core.Config;
 
 var logger = new LoggerConfiguration()
     .WriteTo.Console()
@@ -15,9 +17,30 @@ var builder = new ConfigurationBuilder()
 
 var configuration = builder.Build();
 
-var titleSection = configuration.GetSection("Title");
 
+
+var titleSection = configuration.GetSection("Title");
 var title = titleSection.Value;
+
+var connString1 = configuration.GetConnectionString("StarwarsConnectionString");
+var connString2 = configuration.GetSection("ConnectionStrings:StarwarsConnectionString").Value;
+
+
+var config = new Config()
+{
+    ConnectionString = configuration.GetConnectionString("StarwarsConnectionString")
+};
+
+
+//Inyeccion de dependencia
+var serviceCollection = new ServiceCollection();
+
+serviceCollection.AddSingleton<IConfig>(config);
+serviceCollection.AddScoped<Starwars.Core.DataEF.JediRepository>();
+serviceCollection.AddScoped<JediBusiness>();
+
+var serviceProvider  = serviceCollection.BuildServiceProvider();
+
 
 Console.WriteLine($"Hello, {title}!");
 
@@ -44,6 +67,7 @@ try
 
 
 }
+
 catch (Exception ex)
 {
     logger.Error($"Error {ex.Message}");
@@ -52,14 +76,18 @@ catch (Exception ex)
 */
 
 
-var jediBusiness = new JediBusiness();
+//var jediBusiness = new JediBusiness();
+var jediBusiness = serviceProvider.GetService<JediBusiness>();
 
 List(jediBusiness, logger);
 
-//var result = jediBusiness.DeleteAsync(1002);
 
-//var jedi3 = jediBusiness.GetAsync(3);
-//jedi3.Name = jedi3.Name + "3";
+//Delete
+//var result = jediBusiness.DeleteAsync(1);
+
+//Update
+//var jedi3 = jediBusiness.GetAsync(2);
+//jedi3.Name = ".NET";
 
 //var result = jediBusiness.UpdateAsync(jedi3);
 

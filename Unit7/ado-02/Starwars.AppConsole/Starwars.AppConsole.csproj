@@ -25,6 +25,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Starwars.Core.Business\Starwars.Core.Business.csproj" />
+    <ProjectReference Include="..\Starwars.Core.Config\Starwars.Core.Config.csproj" />
+    <ProjectReference Include="..\Starwars.Core.DataEF\Starwars.Core.DataEF.csproj" />
     <ProjectReference Include="..\Starwars.Core.Entities\Starwars.Core.Entities.csproj" />
   </ItemGroup>
 

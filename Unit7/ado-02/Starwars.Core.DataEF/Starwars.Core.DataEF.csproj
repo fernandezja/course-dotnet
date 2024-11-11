@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Starwars.Core.Config\Starwars.Core.Config.csproj" />
     <ProjectReference Include="..\Starwars.Core.Entities\Starwars.Core.Entities.csproj" />
   </ItemGroup>
 

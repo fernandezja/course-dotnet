@@ -1,4 +1,5 @@
 ﻿
+using Starwars.Core.Config;
 using Starwars.Core.Data;
 using Starwars.Core.Entities;
 using Starwars.Core.Entities.Filters;
@@ -10,10 +11,16 @@ namespace Starwars.Core.Business
         private Starwars.Core.Data.JediRepository _jediRepository;
         private Starwars.Core.DataEF.JediRepository _jediRepository2;
 
-        public JediBusiness()
-        {
+
+        private readonly IConfig _config;
+
+        public JediBusiness(IConfig config,
+                            Starwars.Core.DataEF.JediRepository jediRepository) { 
+          
+            _config = config;
             _jediRepository = new Starwars.Core.Data.JediRepository();
-            _jediRepository2 = new Starwars.Core.DataEF.JediRepository();
+            _jediRepository2 = jediRepository;
+            //_jediRepository2 = new Starwars.Core.DataEF.JediRepository();
         }
 
         public JediResult GetAll()
