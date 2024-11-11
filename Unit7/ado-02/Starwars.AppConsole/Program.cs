@@ -54,7 +54,7 @@ catch (Exception ex)
 
 var jediBusiness = new JediBusiness();
 
-List(jediBusiness);
+List(jediBusiness, logger);
 
 //var result = jediBusiness.DeleteAsync(1002);
 
@@ -72,12 +72,14 @@ Console.WriteLine("End!");
 
 
 
-static void List(JediBusiness jediBusiness)
+static void List(JediBusiness jediBusiness, 
+                 Serilog.ILogger logger)
 {
     var jedisResult = jediBusiness.GetAll();
 
     if (jedisResult.HasError)
     {
+        logger.Error($"ERROR: {jedisResult.Message}");
         Console.WriteLine($"ERROR: {jedisResult.Message}");
     }
     else

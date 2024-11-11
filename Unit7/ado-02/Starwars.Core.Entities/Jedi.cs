@@ -9,9 +9,9 @@ namespace Starwars.Core.Entities
         //[Key]
         public int JediId { get; set; }
 
-        public string Email { get; set; }
+        public string? Email { get; set; }
 
-        [Column("FirstName")] 
+        //[Column("FirstName")] 
         public string Name { get; set; }
 
         public override string ToString()

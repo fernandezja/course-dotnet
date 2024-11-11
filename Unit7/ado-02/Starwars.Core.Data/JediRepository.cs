@@ -12,7 +12,7 @@ namespace Starwars.Core.Data
         private readonly string CONNECTIONSTRING = "Persist Security Info=True;Initial Catalog=Starwars;Data Source=.; Application Name=DemoApp; Integrated Security=True;MultipleActiveResultSets=True;TrustServerCertificate=True;";
 
         //private readonly string QUERY_DEMO = "SELECT \r\n\tJediId = C.column_id,\r\n\t[Name] = C.[Name]\r\nFROM sys.all_columns C\r\nWHERE \r\n\tC.name LIKE 'star%'";
-        private readonly string QUERY_SELECT = "SELECT JediId,Name,Birthday FROM dbo.Jedi";
+        private readonly string QUERY_JEDI_SELECT = "SELECT JediId,Name,Birthday FROM dbo.Jedi";
 
         public JediRepository()
         {
@@ -22,6 +22,7 @@ namespace Starwars.Core.Data
         public JediResult GetAll()
         {
             var result = new JediResult();
+
             result.Items = new List<Jedi>();
 
             //Obtener datos desde la DB
@@ -33,7 +34,7 @@ namespace Starwars.Core.Data
 
             var cmd = new SqlCommand();
             cmd.CommandType = System.Data.CommandType.Text;
-            cmd.CommandText = QUERY_SELECT;
+            cmd.CommandText = QUERY_JEDI_SELECT;
 
 
             //Parametros..
