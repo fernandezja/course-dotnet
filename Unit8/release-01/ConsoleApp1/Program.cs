@@ -1,10 +1,14 @@
 ﻿// See https://aka.ms/new-console-template for more information
-
-
 using ConsoleApp1;
+using Serilog;
 
 
-Console.WriteLine("Hello, World!");
+var logger = new LoggerConfiguration()
+                    .WriteTo.Console()
+                    .CreateLogger();
+
+
+Console.WriteLine("Hello, .NET!");
 
 var a = 0;
 
@@ -15,9 +19,10 @@ var c = System.Text.Encoding.ASCII.GetBytes("NET");
 
 var client = new ClientApi();
 
+
 try
 {
-    var d = client.GetValue(hasError: true);
+    var d = client.GetValue(hasError: false);
 
     Console.WriteLine($"Result: {d}");
 }
@@ -26,17 +31,20 @@ try
 //    //Acciones particulares
 //    Console.WriteLine($"ERROR: {ex.Message}");
 //}
-catch (DivideByZeroException ex)
+catch (DivideByZeroException ex) 
 {
     //Acciones particulares
+    logger.Error(ex, $"ERROR: {ex.Message}");
     Console.WriteLine($"ERROR: {ex.Message}");
 }
 catch (CustomException ex)
 {
+    logger.Error(ex, $"Custom Error: {ex.Message}");
     Console.WriteLine($"Custom Error: {ex.Message}");
 }
 catch (Exception ex)
 {
+    logger.Error(ex, $"ERROR: {ex.Message}");
     Console.WriteLine($"ERROR: {ex.Message}");
 }
 finally
@@ -46,10 +54,12 @@ finally
 
 
 #if DEBUG
+    logger.Information("Debug DEBUG");
     Console.WriteLine("Debug DEBUG");
 #endif
 
 #if RELEASE
+    logger.Information("Debug RELEASE");
     Console.WriteLine("Debug RELEASE");
 #endif
 
