@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/Solution Items/" Id="8ec462fd-d22e-90a8-e5ce-7e832ba40c5d">
+    <File Path="Readme.md" />
+  </Folder>
+  <Folder Name="/Tests/" Id="02ea681e-c7d8-13c7-8484-4ac65e1b71e8">
+    <Project Path="CursoNET.Core.Entidades.Tests/CursoNET.Core.Entidades.Tests.csproj" />
+  </Folder>
+  <Project Path="ConsoleApp4/ConsoleApp4.csproj" />
+  <Project Path="CursoNET.Core.Entidades/CursoNET.Core.Entidades.csproj" />
+</Solution>

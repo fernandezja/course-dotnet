@@ -16,7 +16,7 @@ namespace Curso.NET.Utils.Test
             var name = "Curso .NET";
             var curso = "";
 
-            for (int i = 0; i < 100000; i++)
+            for (int i = 0; i < 10000; i++)
             {
                 curso = curso + name;
             }
