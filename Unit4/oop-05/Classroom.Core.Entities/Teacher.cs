@@ -2,6 +2,9 @@
 {
     public class Teacher: Person
     {
-       
+       public void Demo2()
+        {
+            //demo 
+        }
     }
 }

@@ -12,10 +12,12 @@ namespace Classroom.Core.Entities.Tests
         [Fact]
         public void Test_Student()
         {
-            Student student = new Student();
-            student.Name = "John";
-            student.LastName = "Doe";
-            student.BirthDate = new DateOnly(2000, 1, 1);
+            var student = new Student
+            {
+                Name = "John",
+                LastName = "Doe",
+                BirthDate = new DateOnly(2000, 1, 1)
+            };
 
             Assert.Equal("John", student.Name);
             Assert.Equal("Doe", student.LastName);
@@ -35,6 +37,7 @@ namespace Classroom.Core.Entities.Tests
             person1 = student;
             person2 = student;
 
+
             Assert.NotNull(person1);
             Assert.NotNull(person2);
 
@@ -44,6 +47,9 @@ namespace Classroom.Core.Entities.Tests
             Assert.NotNull(student2);
             Assert.Equal("John", student2.Name);
             Assert.Equal("Doe", student2.LastName);
+
+            Student student3 = person1 as Student;
+            Assert.NotNull(student3);
         }
     }
 }

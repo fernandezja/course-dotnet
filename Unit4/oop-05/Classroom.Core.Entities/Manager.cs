@@ -9,17 +9,21 @@ namespace Classroom.Core.Entities
 {
     public static class Manager
     {
-        /*
-        public string Method1(Student student)
-        {
-            return $"Hi {student.Name}";
-        }
+        //public static string MethodToStudent(Student s1)
+        //{
+        //    return $"Hi {s1.Name}";
+        //}   
 
-        public string Method1(Teacher teacher)
-        {
-            return $"Hi {teacher.Name}";
-        }
-        */
+        //public static string Method1(Student student)
+        //{
+        //    return $"Hi {student.Name}";
+        //}
+
+        //public static string Method1(Teacher teacher)
+        //{
+        //    return $"Hi {teacher.Name}";
+        //}
+
 
         //public string Method1(Person person)
         //{

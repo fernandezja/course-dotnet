@@ -10,5 +10,11 @@ namespace Classroom.Core.Entities
         public DateOnly BirthDate { get; set; }
 
         public int Age => DateTime.Now.Year - BirthDate.Year;   
+    
+        public virtual string Method1()
+        {
+            return $"Hi {Name} (Method1)";
+        }
+
     }
 }
