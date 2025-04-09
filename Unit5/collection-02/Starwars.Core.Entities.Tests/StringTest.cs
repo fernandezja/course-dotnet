@@ -38,6 +38,8 @@ namespace Starwars.Core.Entities.Tests
                 demo.Append(NET);
             }
 
+            //Span<char> span = stackalloc char[1000];
+
             Assert.NotEmpty(demo.ToString());
         }
 

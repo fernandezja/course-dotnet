@@ -10,16 +10,22 @@ namespace Starwars.Core.Entities.Tests
 {
     public class DateTimeTest
     {
-       
+
 
         [Fact]
         public void Instance_Min_Value_DateTime()
         {
-            var d1 = new DateTime();
+            var d1 = new DateTime(); //instance
 
             Assert.Equal(1, d1.Day);
             Assert.Equal(1, d1.Month);
             Assert.Equal(1, d1.Year);
+
+            var d1FromMinValue = DateTime.MinValue;
+
+            Assert.Equal(1, d1FromMinValue.Day);
+            Assert.Equal(1, d1FromMinValue.Month);
+            Assert.Equal(1, d1FromMinValue.Year);
 
         }
 
@@ -47,15 +53,15 @@ namespace Starwars.Core.Entities.Tests
         [Fact]
         public void constructor_DateTime()
         {
-            var d1 = new DateTime(2024, 10, 24, 15, 31, 0);
+            var d1 = new DateTime(2025, 4, 9, 16, 21, 15);
 
-            Assert.Equal(24, d1.Day);
-            Assert.Equal(10, d1.Month);
-            Assert.Equal(2024, d1.Year);
-            Assert.Equal(15, d1.Hour);
-            Assert.Equal(31, d1.Minute);
-            Assert.Equal(0, d1.Second);
-            Assert.Equal(DayOfWeek.Thursday, d1.DayOfWeek);
+            Assert.Equal(9, d1.Day);
+            Assert.Equal(4, d1.Month);
+            Assert.Equal(2025, d1.Year);
+            Assert.Equal(16, d1.Hour);
+            Assert.Equal(21, d1.Minute);
+            Assert.Equal(15, d1.Second);
+            Assert.Equal(DayOfWeek.Wednesday, d1.DayOfWeek);
 
         }
 
@@ -63,18 +69,18 @@ namespace Starwars.Core.Entities.Tests
         [Fact]
         public void ToStringShortAndLong_DateTime()
         {
-            var d1 = new DateTime(2024, 10, 24, 15, 31, 0);
+            var d1 = new DateTime(2025, 4, 9, 16, 21, 15);
 
             var result1 = d1.ToShortDateString();
             var result2 = d1.ToShortTimeString();
             var result3 = d1.ToLongDateString();
             var result4 = d1.ToLongTimeString();
 
-            Assert.Equal("24/10/2024", result1);
-            Assert.Equal("15:31", result2);
-            Assert.Equal("jueves, 24 de octubre de 2024", result3);
-            Assert.Equal("15:31:00", result4);
-            Assert.Equal(DayOfWeek.Thursday , d1.DayOfWeek);
+            Assert.Equal("9/4/2025", result1);
+            Assert.Equal("16:21", result2);
+            Assert.Equal("miércoles, 9 de abril de 2025", result3);
+            Assert.Equal("16:21:15", result4);
+            Assert.Equal(DayOfWeek.Wednesday, d1.DayOfWeek);
 
         }
 
@@ -84,12 +90,16 @@ namespace Starwars.Core.Entities.Tests
         {
             var d1 = new DateTime(2024, 10, 24, 15, 31, 0);
 
+        https://learn.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings
+            var result0 = d1.ToString("yyyy - MM - dd");
             var result1 = d1.ToString("yy ** MM ** dd");
             var result2 = d1.ToString("yy ** MMM ** dd");
             var result3 = d1.ToString("yy ** MMMM ** dd");
 
+            
+            Assert.Equal("2024 - 10 - 24", result0);
             Assert.Equal("24 ** 10 ** 24", result1);
-            Assert.Equal("24 ** oct. ** 24", result2);
+            Assert.Equal("24 ** oct ** 24", result2);
             Assert.Equal("24 ** octubre ** 24", result3);
             Assert.Equal(DayOfWeek.Thursday, d1.DayOfWeek);
 
@@ -127,7 +137,7 @@ namespace Starwars.Core.Entities.Tests
 
 
         [Fact]
-        public void UTC_DateTime()
+        public void UTC_DateTime_v1()
         {
             var d1 = new DateTime(2024, 10, 24, 15, 31, 0);
 
@@ -135,6 +145,17 @@ namespace Starwars.Core.Entities.Tests
             Assert.Equal(31, d1.ToUniversalTime().Minute);
 
         }
+
+        [Fact]
+        public void UTC_DateTime_v2()
+        {
+            var d1 = new DateTime(2025, 4, 9, 16, 21, 15);
+
+            Assert.Equal(19, d1.ToUniversalTime().Hour);
+            Assert.Equal(21, d1.ToUniversalTime().Minute);
+
+        }
+
 
 
         [Fact]

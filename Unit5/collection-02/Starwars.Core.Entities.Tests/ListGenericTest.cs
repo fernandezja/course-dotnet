@@ -104,6 +104,7 @@ public class ListGenericTest
             jedi.Name = $"Jedi {i}";
 
             jedis.Add(jedi);
+            //jedis.Add(1);
         }
 
         return jedis;

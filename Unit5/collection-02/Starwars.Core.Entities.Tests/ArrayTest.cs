@@ -17,12 +17,13 @@ namespace Starwars.Core.Entities.Tests
             arraySimple.Add(1);
             arraySimple.Add(100);
             arraySimple.Add(new DateTime());
-            arraySimple.Add(new Jedi() {  
-                    Name = "Yoda"});
+            arraySimple.Add(new Jedi() {
+                Name = "Yoda" });
 
             Assert.Equal(4, arraySimple.Count);
 
             var jedi = arraySimple[3];
+
             //Assert.Equal("Yoda", jedi.Name);
 
             var jediOption1 = jedi as Jedi;
