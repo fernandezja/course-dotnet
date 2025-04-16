@@ -20,10 +20,12 @@ namespace WinFormsApp4
             var usuarios = usuarioNegocio.Listar();
 
             listUsuarios.Items.Clear();
+
             foreach (var u in usuarios)
             {
                 listUsuarios.Items.Add($"{u.Nombre} {u.Apellido}");
             }
         }
+
     }
 }

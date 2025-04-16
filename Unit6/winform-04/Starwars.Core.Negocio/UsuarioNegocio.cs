@@ -7,8 +7,8 @@ namespace Starwars.Core.Negocio
     {
         public List<Usuario> Listar() { 
             var usuarioRepository = new UsuarioRepository();
-            return usuarioRepository.ListarDB();
-            //return usuarioRepository.ListarSimple();
+            //return usuarioRepository.ListarDB();
+            return usuarioRepository.ListarSimple();
         }
     }
 }
