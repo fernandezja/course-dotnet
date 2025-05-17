@@ -12,8 +12,8 @@ namespace ConsoleApp1
         {
             if (hasError)
             {
-                //var demo = 0;
-                //var result = 10 / demo;
+                var demo = 0;
+                var result = 10 / demo;
 
                 //throw new CustomException();
 

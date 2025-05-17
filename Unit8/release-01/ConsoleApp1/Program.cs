@@ -22,7 +22,7 @@ var client = new ClientApi();
 
 try
 {
-    var d = client.GetValue(hasError: false);
+    var d = client.GetValue(hasError: true);
 
     Console.WriteLine($"Result: {d}");
 }
