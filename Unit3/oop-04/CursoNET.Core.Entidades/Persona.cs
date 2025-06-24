@@ -1,5 +1,4 @@
 ﻿
-
 namespace CursoNET.Core.Entidades;
 
 
@@ -45,7 +44,7 @@ public class Persona: IDisposable
         Apellido = apellido;
     }
 
-    public bool EsIgual(object obj)
+    public virtual bool EsIgual(object obj)
     {
         if (obj == null || GetType() != obj.GetType())
         {
