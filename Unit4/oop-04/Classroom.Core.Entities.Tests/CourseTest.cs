@@ -56,6 +56,8 @@ namespace Classroom.Core.Entities.Tests
             Assert.Equal(2, course1.Students.Count);
             Assert.Equal("Student 1", course1.Students[0].Name);
             Assert.Equal("Student 1", course1.Students.First().Name);
+
+            Assert.Equal("Student 2", course1.Students[1].Name);
         }
     }
 }

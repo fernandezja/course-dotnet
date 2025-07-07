@@ -13,7 +13,7 @@ namespace Classroom.Core.Entities.Tests
             t1.MethodTeacher();
 
             Person person1 = t1;
-
+            
             ((Teacher)person1).MethodTeacher();
 
             Teacher teacher2 = (Teacher)person1;
