@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="BlazorApp6/BlazorApp6.csproj" />
+  <Project Path="ConsoleApp6/ConsoleApp6.csproj" />
+  <Project Path="Starwars.Core.Entidades.Test/Starwars.Core.Entidades.Test.csproj" />
+  <Project Path="Starwars.Core.Entidades/Starwars.Core.Entidades.csproj" />
+  <Project Path="WinFormsApp6/WinFormsApp6.csproj" />
+</Solution>

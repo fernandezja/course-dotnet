@@ -1,0 +1,22 @@
+﻿@page "/"
+@using Starwars.Core.Entidades
+
+<PageTitle>Home</PageTitle>
+
+<h1>Hello, @_jedi.Name!</h1>
+
+Welcome to your new app.
+
+@code {
+  
+    private Jedi _jedi;
+
+    protected override void OnInitialized()
+    {
+        _jedi = new Jedi
+        {
+            JediId = 1,
+            Name = "Luke Skywalker"
+        };
+    }
+}
