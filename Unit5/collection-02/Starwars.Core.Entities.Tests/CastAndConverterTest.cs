@@ -17,8 +17,8 @@ namespace Starwars.Core.Entities.Tests
 
         //    var d1 = DateTime.Now;
 
-        //    jedi1 = (Jedi)d1;
-        //    jedi1 = d1 as Jedi;
+        //    //jedi1 = (Jedi)d1;
+        //    //jedi1 = d1 as Jedi;
 
 
         //    var obj1 = (object)jedi1;
@@ -32,6 +32,7 @@ namespace Starwars.Core.Entities.Tests
         [Fact]
         public void list_generic_add()
         {
+           
             var jedi1 = new Jedi()
             {
                 Name = "Yoda"

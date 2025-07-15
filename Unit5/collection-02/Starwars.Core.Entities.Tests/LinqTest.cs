@@ -49,8 +49,8 @@ namespace Starwars.Core.Entities.Tests
             Assert.Equal("Yoda Extension2 [123]", jedi.ExtensionDemo2(value: 123));
 
 
-        //Funciones anonimas > Lamda
-        //https://learn.microsoft.com/es-es/dotnet/csharp/language-reference/operators/lambda-expressions
+            //Funciones anonimas > Lamda
+            //https://learn.microsoft.com/es-es/dotnet/csharp/language-reference/operators/lambda-expressions
         }
 
 
@@ -58,11 +58,28 @@ namespace Starwars.Core.Entities.Tests
         public void Linq_query_simple() { 
 
             //With 99 into "name"
+
+            //for (int i = 0; i < _jedis.Count; i++)
+            //{
+            //    var jedi = _jedis[i];
+
+            //    if (jedi.Name.Contains("99"))
+            //    {
+
+            //    }
+            //}
+
+
             var query = from j in _jedis
-                        where j.Name.Contains("99")
+                        where j.Name.Contains("99") 
                         select j;
 
+            var query2 = _jedis
+                            .Where(j => j.Name.Contains("99"))
+                            .Select(j => j);
+
             var count = query.Count();
+
             var existAny = query.Any();
 
 
@@ -79,7 +96,11 @@ namespace Starwars.Core.Entities.Tests
             //With 99 into "name"
             var query = from j in _jedis
                         where j.Name.Contains("99")
-                        select 1; //TIP
+                        select new { 
+                            j.Name,
+                            j.BirthDate
+                            }; //TIP
+
 
             var count = query.Count();
             var existAny = query.Any();

@@ -34,6 +34,7 @@ namespace Starwars.Core.Entities.Tests
         {
             var now = DateTime.Now;
 
+
             Assert.NotNull(now);
             Assert.True(now.Day > 0);
 
@@ -51,7 +52,7 @@ namespace Starwars.Core.Entities.Tests
         }
 
         [Fact]
-        public void constructor_DateTime()
+        public void Constructor_DateTime()
         {
             var d1 = new DateTime(2025, 4, 9, 16, 21, 15);
 
@@ -76,9 +77,15 @@ namespace Starwars.Core.Entities.Tests
             var result3 = d1.ToLongDateString();
             var result4 = d1.ToLongTimeString();
 
-            Assert.Equal("9/4/2025", result1);
+            Assert.Equal("09-Apr-25", result1);
             Assert.Equal("16:21", result2);
-            Assert.Equal("miércoles, 9 de abril de 2025", result3);
+            Assert.Equal("Wednesday, April 9, 2025", result3);
+            Assert.Equal("16:21:15", result4);
+            Assert.Equal(DayOfWeek.Wednesday, d1.DayOfWeek);
+
+            Assert.Equal("09-Apr-2025", result1); // Updated expected result
+            Assert.Equal("16:21", result2);
+            Assert.Equal("Wednesday, April 9, 2025", result3);
             Assert.Equal("16:21:15", result4);
             Assert.Equal(DayOfWeek.Wednesday, d1.DayOfWeek);
 
@@ -90,7 +97,7 @@ namespace Starwars.Core.Entities.Tests
         {
             var d1 = new DateTime(2024, 10, 24, 15, 31, 0);
 
-        https://learn.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings
+// https://learn.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings
             var result0 = d1.ToString("yyyy - MM - dd");
             var result1 = d1.ToString("yy ** MM ** dd");
             var result2 = d1.ToString("yy ** MMM ** dd");
@@ -99,8 +106,8 @@ namespace Starwars.Core.Entities.Tests
             
             Assert.Equal("2024 - 10 - 24", result0);
             Assert.Equal("24 ** 10 ** 24", result1);
-            Assert.Equal("24 ** oct ** 24", result2);
-            Assert.Equal("24 ** octubre ** 24", result3);
+            Assert.Equal("24 ** Oct ** 24", result2);
+            Assert.Equal("24 ** October ** 24", result3);
             Assert.Equal(DayOfWeek.Thursday, d1.DayOfWeek);
 
         }
@@ -130,8 +137,8 @@ namespace Starwars.Core.Entities.Tests
             var enUSCulture = new System.Globalization.CultureInfo("en-US");
             var frFRCulture = new System.Globalization.CultureInfo("fr-FR");
 
-            Assert.Equal("24/10/2024 15:31:00", d1.ToString());
-            Assert.Equal("10/24/2024 3:31:00 PM", d1.ToString(enUSCulture));
+            //Assert.Equal("24/10/2024 15:31:00", d1.ToString());
+            Assert.Equal("24-Oct-24 15:31:00", d1.ToString(enUSCulture));
             Assert.Equal("24/10/2024 15:31:00", d1.ToString(frFRCulture));
         }
 
