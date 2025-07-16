@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ado-03\Starwars.Core.Business\Starwars.Core.Business.csproj" />
+    <ProjectReference Include="..\ado-03\Starwars.Core.Entities\Starwars.Core.Entities.csproj" />
+  </ItemGroup>
+
+</Project>

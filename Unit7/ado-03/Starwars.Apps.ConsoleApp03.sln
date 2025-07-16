@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Starwars.Core.Business", "S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Starwars.Core.Data", "Starwars.Core.Data\Starwars.Core.Data.csproj", "{04358337-1A77-44D3-AF63-76727B7FC30F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Starwars.Apps.WinFormsApp3", "..\Starwars.Apps.WinFormsApp3\Starwars.Apps.WinFormsApp3.csproj", "{C50B866E-9BFA-48B0-B5D9-41CF1C51B14F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{04358337-1A77-44D3-AF63-76727B7FC30F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{04358337-1A77-44D3-AF63-76727B7FC30F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{04358337-1A77-44D3-AF63-76727B7FC30F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C50B866E-9BFA-48B0-B5D9-41CF1C51B14F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C50B866E-9BFA-48B0-B5D9-41CF1C51B14F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C50B866E-9BFA-48B0-B5D9-41CF1C51B14F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C50B866E-9BFA-48B0-B5D9-41CF1C51B14F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
