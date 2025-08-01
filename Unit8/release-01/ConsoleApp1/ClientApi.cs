@@ -13,11 +13,11 @@ namespace ConsoleApp1
             if (hasError)
             {
                 var demo = 0;
-                var result = 10 / demo;
+                //var result = 10 / demo;
 
-                //throw new CustomException();
+                throw new CustomException();
 
-                throw new ArgumentException("Parametro incorrecto");
+                //throw new ArgumentException("Parametro incorrecto");
             }
 
             return "Un valor";
